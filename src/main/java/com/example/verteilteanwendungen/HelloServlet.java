@@ -12,7 +12,7 @@ public class HelloServlet extends HttpServlet
 
     public void init()
     {
-        message = "Hello World Neu!";
+        message = "Hello World ALT!";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
