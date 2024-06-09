@@ -24,4 +24,8 @@ public class BenutzerDAO
             return null;
         }
     }
+
+    public void save(Benutzer benutzer) {
+        em.persist(benutzer);
+    }
 }
