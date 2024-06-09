@@ -1,4 +1,4 @@
-package Core.Enums;
+package core.enums;
 
 public enum Benutzergruppe {
     ADMIN,

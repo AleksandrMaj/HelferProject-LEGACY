@@ -1,6 +1,6 @@
-package Core.Entities;
+package core.entities;
 
-import Core.Enums.Benutzergruppe;
+import core.enums.Benutzergruppe;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Entity
 public class Benutzer implements Serializable
 {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -20,10 +19,10 @@ public class Benutzer implements Serializable
     @Embedded
     private Adresse adresse;
 
+    @Enumerated(EnumType.STRING)
     private Benutzergruppe benutzergruppe;
 
-    @Embedded
-    private Email email;
+    private String email;
 
     private String passwort;
 
@@ -31,7 +30,7 @@ public class Benutzer implements Serializable
     {
     }
 
-    public Benutzer(String name, String vorname, Adresse adresse, Benutzergruppe benutzergruppe, Email email, String passwort)
+    public Benutzer(String name, String vorname, Adresse adresse, Benutzergruppe benutzergruppe, String email, String passwort)
     {
         this.name = name;
         this.vorname = vorname;
@@ -91,12 +90,12 @@ public class Benutzer implements Serializable
         this.benutzergruppe = benutzergruppe;
     }
 
-    public Email getEmail()
+    public String getEmail()
     {
         return email;
     }
 
-    public void setEmail(Email email)
+    public void setEmail(String email)
     {
         this.email = email;
     }
@@ -160,20 +159,3 @@ class Adresse
         this.land = land;
     }
 }
-
-@Embeddable
-class Email
-{
-    private String email;
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
-    }
-}
-
