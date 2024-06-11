@@ -6,22 +6,35 @@
     <title>Registration</title>
 </h:head>
 <h:body>
+    <h1>Registrieren</h1>
     <h:form>
         <h:panelGrid columns="2">
-            <h:outputLabel for="name" value="Name:" />
-            <h:inputText id="name" value="#{registrieren.name}" />
-
             <h:outputLabel for="vorname" value="First Name:" />
             <h:inputText id="vorname" value="#{registrieren.vorname}" />
 
-            <h:outputLabel for="username" value="Username:" />
-            <h:inputText id="username" value="#{registrieren.username}" />
+            <h:outputLabel for="name" value="Name:" />
+            <h:inputText id="name" value="#{registrieren.name}" />
+
+            <h:outputLabel for="email" value="Email:" />
+            <h:inputText id="email" value="#{registrieren.email}" />
 
             <h:outputLabel for="password" value="Password:" />
             <h:inputSecret id="password" value="#{registrieren.password}" />
 
-            <h:outputLabel for="email" value="Email:" />
-            <h:inputText id="email" value="#{registrieren.email}" />
+            <h:outputLabel for="strasse" value="Street:" />
+            <h:inputText id="strasse" value="#{registrieren.adresse.strasse}" />
+
+            <h:outputLabel for="strasse" value="Hausnummer:" />
+            <h:inputText id="hausnummer" value="#{registrieren.adresse.strasse}" />
+
+            <h:outputLabel for="stadt" value="City:" />
+            <h:inputText id="stadt" value="#{registrieren.adresse.stadt}" />
+
+            <h:outputLabel for="plz" value="Postal Code:" />
+            <h:inputText id="plz" value="#{registrieren.adresse.plz}" />
+
+            <h:outputLabel for="land" value="Country:" />
+            <h:inputText id="land" value="#{registrieren.adresse.land}" />
 
             <h:commandButton value="Register" action="#{registrieren.register}" />
         </h:panelGrid>
