@@ -23,3 +23,23 @@ VALUES ('Mustermann', 'Max', 'Musterstraße 1', 'Musterstadt', '12345', 'Musterl
 
        ('Doe', 'John', 'Main St 123', 'Sample City', '67890', 'Sample Country', 'USER', 'john.doe@example.com',
         'password456');
+
+-- Drop table Helfer if exists (Apache Derby doesn't support IF EXISTS directly)
+-- Make sure to drop the table manually or use your DB management tool to drop it before running this script
+
+-- Create the table
+CREATE TABLE Helfer
+(
+    id         INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    mitgliedId INT NOT NULL,
+    eventId    INT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+-- Optionally, you can add indexes for the foreign keys if necessary
+CREATE INDEX idx_mitgliedId ON Helfer (mitgliedId);
+CREATE INDEX idx_eventId ON Helfer (eventId);
+
+-- Insert sample data
+-- INSERT INTO Helfer (mitgliedId, eventId) VALUES (1, 100);
+-- INSERT INTO Helfer (mitgliedId, eventId) VALUES (2, 101);
