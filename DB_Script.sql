@@ -8,20 +8,19 @@ CREATE TABLE Benutzer
     name           VARCHAR(255),
     vorname        VARCHAR(255),
     strasse        VARCHAR(255),
+    hausnummer     VARCHAR(10),
     stadt          VARCHAR(255),
-    plz            VARCHAR(20),
-    land           VARCHAR(255),
+    plz            VARCHAR(10),
     benutzergruppe VARCHAR(50),
     email          VARCHAR(255),
     passwort       VARCHAR(255)
 );
 
 -- Insert example data
-INSERT INTO Benutzer (name, vorname, strasse, stadt, plz, land, benutzergruppe, email, passwort)
-VALUES ('Mustermann', 'Max', 'Musterstraße 1', 'Musterstadt', '12345', 'Musterland', 'ADMIN',
+INSERT INTO Benutzer (name, vorname, strasse, hausnummer, stadt, plz, benutzergruppe, email, passwort)
+VALUES ('Mustermann', 'Max', 'Musterstraße', '1', 'Musterstadt', '12345', 'ADMIN',
         'max.mustermann@example.com', 'password123'),
-
-       ('Doe', 'John', 'Main St 123', 'Sample City', '67890', 'Sample Country', 'USER', 'john.doe@example.com',
+       ('Doe', 'John', 'Main St', '123', 'Sample City', '67890', 'USER', 'john.doe@example.com',
         'password456');
 
 -- Drop table Helfer if exists (Apache Derby doesn't support IF EXISTS directly)

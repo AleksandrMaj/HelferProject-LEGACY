@@ -25,16 +25,13 @@
             <h:inputText id="strasse" value="#{registrieren.adresse.strasse}" />
 
             <h:outputLabel for="strasse" value="Hausnummer:" />
-            <h:inputText id="hausnummer" value="#{registrieren.adresse.strasse}" /> <!--TODO: Implement Hausnummer-->
+            <h:inputText id="hausnummer" value="#{registrieren.adresse.hausnummer}" />
 
             <h:outputLabel for="stadt" value="City:" />
             <h:inputText id="stadt" value="#{registrieren.adresse.stadt}" />
 
             <h:outputLabel for="plz" value="Postal Code:" />
             <h:inputText id="plz" value="#{registrieren.adresse.plz}" />
-
-            <h:outputLabel for="land" value="Country:" />
-            <h:inputText id="land" value="#{registrieren.adresse.land}" />
 
             <h:commandButton value="Register" action="#{registrieren.register}" />
         </h:panelGrid>
