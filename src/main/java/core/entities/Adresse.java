@@ -6,9 +6,9 @@ import jakarta.persistence.Embeddable;
 public class Adresse
 {
     private String strasse;
+    private String hausnummer;
     private String stadt;
     private String plz;
-    private String land;
 
     public String getStrasse()
     {
@@ -18,6 +18,16 @@ public class Adresse
     public void setStrasse(String strasse)
     {
         this.strasse = strasse;
+    }
+
+    public String getHausnummer()
+    {
+        return hausnummer;
+    }
+
+    public void setHausnummer(String hausnummer)
+    {
+        this.hausnummer = hausnummer;
     }
 
     public String getStadt()
@@ -38,15 +48,5 @@ public class Adresse
     public void setPlz(String plz)
     {
         this.plz = plz;
-    }
-
-    public String getLand()
-    {
-        return land;
-    }
-
-    public void setLand(String land)
-    {
-        this.land = land;
     }
 }
