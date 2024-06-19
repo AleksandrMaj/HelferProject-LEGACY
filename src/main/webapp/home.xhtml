@@ -5,7 +5,7 @@
     <title>Success</title>
 </h:head>
 <h:body>
-    <h:outputText value="Welcome, #{authentifizierung.username}. (Hier kann der Home-Bildschirm angezeigt werden)" />
+    <h:outputText value="Welcome, #{userSession.loggedInUser.vorname}. (Hier kann der Home-Bildschirm angezeigt werden)" />
 </h:body>
 </html>
 <!-- TODO: Implement manager so we can access the current user across the application -->
