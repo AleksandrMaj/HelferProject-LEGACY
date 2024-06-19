@@ -32,7 +32,8 @@ CREATE TABLE Helfer
     id         INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
     mitgliedId INT NOT NULL,
     eventId    INT NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    CONSTRAINT fk_mitglied FOREIGN KEY (mitgliedId) REFERENCES Benutzer(id)
 );
 
 -- Optionally, you can add indexes for the foreign keys if necessary
