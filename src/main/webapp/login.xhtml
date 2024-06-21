@@ -88,9 +88,9 @@
         <div class="login-container">
             <h2>My Website</h2>
             <h3>Login</h3>
-            <h:inputText id="username" value="#{authentifizierung.username}" placeholder="Username" />
-            <h:inputSecret id="password" value="#{authentifizierung.password}" placeholder="Password" />
-            <h:commandButton value="Login" action="#{authentifizierung.login}" styleClass="login-button" />
+            <h:inputText id="username" value="#{anmelden.username}" placeholder="Username" />
+            <h:inputSecret id="password" value="#{anmelden.password}" placeholder="Password" />
+            <h:commandButton value="Login" action="#{anmelden.login}" styleClass="login-button" />
             <h:commandButton value="Register" action="register.xhtml?faces-redirect=true" styleClass="register-button" />
             <h:messages globalOnly="true" styleClass="error-message" />
         </div>
