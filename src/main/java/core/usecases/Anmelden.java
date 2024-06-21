@@ -5,14 +5,18 @@ import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @Named
 @RequestScoped
-public class Authentifizierung {
-
+public class Anmelden
+{
     @EJB
     private BenutzerManager benutzerManager;
+
+    @Inject
+    private UserSession userSession;
 
     private String username;
     private String password;
@@ -39,6 +43,7 @@ public class Authentifizierung {
         Benutzer benutzer = benutzerManager.benutzerSuchen(username, password);
 
         if (benutzer != null) {
+            userSession.setLoggedInUser(benutzer);
             return "home.xhtml"; // Navigation to a success page
         } else {
             FacesContext.getCurrentInstance().addMessage(null,
