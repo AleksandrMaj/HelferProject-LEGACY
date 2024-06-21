@@ -110,4 +110,3 @@ public class Benutzer implements Serializable
         this.passwort = passwort;
     }
 }
-
