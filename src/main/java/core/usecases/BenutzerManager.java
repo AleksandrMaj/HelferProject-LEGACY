@@ -16,4 +16,9 @@ public class BenutzerManager
     {
         return benutzerDAO.suchen(username, password);
     }
+
+
+    //TODO: Implement
+    public void getHelferEventsFromBenutzer(int eventID) {
+    }
 }
